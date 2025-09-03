@@ -16,6 +16,19 @@ Use font-family for text fonts
 Use font-size for text sizes
 Use text-align for text alignment
 
+-----CSS
+CSS stands for Cascading Style Sheets.
+CSS saves a lot of work. It can control the layout of multiple web pages all at once.
+
+------lists
+Use the HTML <ul> element to define an unordered list
+Use the CSS list-style-type property to define the list item marker
+Use the HTML <li> element to define a list item
+Lists can be nested
+List items can contain other HTML elements
+Use the CSS property float:left to display a list horizontally
+
+
 
 Tag 	    Description
 -------------------------------------------------
@@ -39,3 +52,16 @@ Tag 	    Description
 <blockquote> 	Defines a section that is quoted from another source
 <cite> 	    Defines the title of a work
 <q> 	    Defines a short inline quotation
+---html list tags---
+<ul> 	    Defines an unordered list
+<ol>    	Defines an ordered list
+<li> 	    Defines a list item
+<dl> 	    Defines a description list
+<dt> 	    Defines a term in a description list
+<dd> 	    Describes the term in a description list
+<ul> 	    Defines an unordered list
+<ol> 	    Defines an ordered list
+<li> 	    Defines a list item
+<dl>    	Defines a description list
+<dt> 	    Defines a term in a description list
+<dd>        Describes the term in a description list
