@@ -65,3 +65,4 @@ Tag 	    Description
 <dl>    	Defines a description list
 <dt> 	    Defines a term in a description list
 <dd>        Describes the term in a description list
+<div>   	Defines a section in a document (block-level)
