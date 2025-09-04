@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>What Can JavaScript Do?</h2>
+
+    <p id="demo">JavaScript can change HTML content.</p>
+    <p>This paragraph will NOT change.</p>
+    <p>Neither will this one.</p>
+
+    <button type="button" onclick="toggleText()">Click Me!</button>
+
+    <script>
+      function toggleText() {
+        let p = document.getElementById("demo");
+        if (p.innerHTML === "JavaScript can change HTML content.") {
+          p.innerHTML = "See JavaScript can change the Text.";
+        } else {
+          p.innerHTML = "JavaScript can change HTML content.";
+        }
+      }
+    </script>
+  </body>
+</html>
