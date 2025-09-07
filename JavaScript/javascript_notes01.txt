@@ -37,3 +37,12 @@ There are two types:
     Implicit Conversion → done automatically by JS
     Explicit Conversion → done manually by the programmer
 #Tip: Always prefer explicit conversion in calculations to avoid unexpected bugs.
+
+call()	Call function immediately with specific this
+apply()	Same as call, but args as array
+bind()	Returns new function with fixed this
+Global(non-strict)	window (browser)
+Function(regular)	Global object / undefined
+Arrow function	Lexical scope
+Object method	The object itself
+Class method	Class instance
