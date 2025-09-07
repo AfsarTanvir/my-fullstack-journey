@@ -1,3 +1,39 @@
 JavaScript is the programming language of the web.
 It can update and change both HTML and CSS.
 It can calculate, manipulate and validate data.
+
+Object Methods
+Object.keys(obj) → array of keys
+Object.values(obj) → array of values
+Object.entries(obj) → array of [key, value] pairs
+Object.assign() → copy/merge objects
+Object.freeze() → lock object completely
+Object.seal() → lock structure but allow changes to values
+Object.hasOwn() → check if property exists
+
+array methods
+splice() → add/remove/replace (changes original).
+slice() → extract part (returns new array).
+sort() → sorts (lexical by default, use compare fn for numbers).
+delete → removes element but leaves hole (avoid).
+find() → first matching value.
+findIndex() → index of first matching value.
+every() → checks if all match condition.
+some() → checks if at least one matches condition.
+
+
+Lexical Scope → inner functions can access variables from outer scope.
+Closure → function + environment (remembers outer variables even after function ends).
+You can achieve:
+Private variables (data hiding)
+Function factories (customizable functions)
+Cleaner callbacks & async code
+
+Spread (...) = expands arrays/objects (copy, merge, pass as arguments).
+Rest (...) = collects remaining values into an array/object (function params, destructuring).
+
+Type Coercion = JavaScript automatically (or manually) converts a value from one type to another.
+There are two types:
+    Implicit Conversion → done automatically by JS
+    Explicit Conversion → done manually by the programmer
+#Tip: Always prefer explicit conversion in calculations to avoid unexpected bugs.

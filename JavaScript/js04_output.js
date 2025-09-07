@@ -34,3 +34,10 @@ function alertButton() {
 function printButton(){
     window.print();
 }
+
+// create new paragraph 
+function addParagraph(){
+    let np = document.createElement("newPara");
+    np.innerHTML = "How dare you touch me?";
+    document.body.appendChild(np);
+}
