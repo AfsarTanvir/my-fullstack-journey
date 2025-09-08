@@ -46,3 +46,18 @@ Function(regular)	Global object / undefined
 Arrow function	Lexical scope
 Object method	The object itself
 Class method	Class instance
+
+
+Recursive Object Iteration → Use recursion to traverse deeply nested objects.
+OOP in JS → Classes, inheritance, encapsulation (public/private).
+Local Storage → Persistent key-value storage in browser.
+Persistent Storage → LocalStorage, SessionStorage, IndexedDB.
+Public vs Private → Use #privateField for privacy in classes.
+Hoisting → Declarations move to top, but initializations don’t.
+
+
+getElementById("id") → single element
+getElementsByClassName("class") → multiple elements (HTMLCollection)
+getElementsByName("name") → matches name attribute, not class
+querySelector("selector") → first match
+querySelectorAll("selector") → all matches
