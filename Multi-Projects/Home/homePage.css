@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #83a4d4, #b6fbff);
+}
+
+#u-List {
+    background-color: antiquewhite;
+    text-decoration: none;
+}
+
+
+.items {
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    gap: 5rem;
+    text-decoration: none;
+}

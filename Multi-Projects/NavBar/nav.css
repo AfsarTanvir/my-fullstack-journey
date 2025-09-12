@@ -1,0 +1,10 @@
+#navbar.navList {
+  background: #333;
+  padding: 10px;
+}
+
+#navbar.navList a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
