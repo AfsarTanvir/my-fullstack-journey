@@ -1,4 +1,3 @@
-// const prompt = require("prompt-sync")();
 let depositBtn = document.querySelector("#addBtn");
 let inputBet = document.querySelector("#betInput");
 let spinBtn = document.querySelector("#betBtn");
@@ -52,7 +51,6 @@ function createBalanceManager() {
 let randomStringGenerator = () => {
   let randomString = [];
   Object.entries(symbolCount).forEach(([k, v]) => {
-    // console.log(k, v);
     for (let i = 0; i < v; ++i) {
       randomString.push(k);
     }
@@ -70,7 +68,6 @@ let printOutput = (randomString) => {
     }
     mainString.push(tempString);
   }
-  //   console.log(mainString);
   return mainString;
 };
 
@@ -82,7 +79,7 @@ const transposeString = (mainString) => {
       str[i].push(mainString[j][i]);
     }
   }
-  // console.log(str);
+
   return str;
 };
 
@@ -96,7 +93,7 @@ depositBtn.addEventListener("click", () => {
     } else {
       account.deposit(numberDepositAmount);
       updateBalanceDisplay();
-      //   alert("Balance: " + account.getBalance());
+
       break;
     }
   }
@@ -144,29 +141,23 @@ spinBtn.addEventListener("click", () => {
   let outputString = transposeString(mainString);
 
   const wins = getWinnings(outputString, bet, lines);
-  account.deposit(wins);
+  spinBtn.disabled = true;
 
   setTimeout(() => {
     winDisplay.textContent = `${wins}`;
+    spinBtn.disabled = false;
     for (let i = 0; i < outputString.length; ++i) {
-      let tempString = "";
       for (let j = 0; j < outputString[i].length; ++j) {
-        tempString +=
-          j + 1 == outputString[i].length
-            ? `${outputString[i][j]}`
-            : `${outputString[i][j]} | `;
+        grid.children[i].children[j].innerHTML = `${outputString[i][j]}`;
       }
-      grid.children[i].innerHTML = tempString;
-      console.log(tempString, grid.children[i]);
     }
-    console.log("Spin Result:", outputString);
-    console.log("Remaining Balance:", account.getBalance());
+    account.deposit(wins);
   }, 2000);
 });
 
-exitBtn.addEventListener('click', ()=>{
+exitBtn.addEventListener("click", () => {
   window.close();
-})
+});
 
 let account = createBalanceManager();
 

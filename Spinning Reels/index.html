@@ -9,15 +9,27 @@
   <body>
     <div class="container">
       <nav id="navBar">
-        <div id="totalBalance">Your Balance : <span></span></div>
+        <div id="totalBalance">Your Balance $: <span></span></div>
         <button id="addBtn">Add Balance</button>
       </nav>
 
       <div id="main">
         <div id="reels">
-          <div class="rowReels">A|B|C</div>
-          <div class="rowReels">A|B|C</div>
-          <div class="rowReels">A|B|C</div>
+          <div class="rowReels">
+            <div class="box">A</div>
+            <div class="box">A</div>
+            <div class="box">A</div>
+          </div>
+          <div class="rowReels">
+            <div class="box">B</div>
+            <div class="box">B</div>
+            <div class="box">B</div>
+          </div>
+          <div class="rowReels">
+            <div class="box">C</div>
+            <div class="box">C</div>
+            <div class="box">C</div>
+          </div>
         </div>
 
         <div id="betInfo">
@@ -42,11 +54,11 @@
           <label for="betInput">Enter your bet amount per line</label>
           <input type="number" id="betInput" placeholder="Enter Your Bet" />
         </div>
-        <div id="winDisplay">Win: <span></span></div>
+        <div id="winDisplay">Win $: <span></span></div>
         <button id="betBtn">Place Bet</button>
       </div>
     </div>
-    
+
     <script src="app.js"></script>
   </body>
 </html>
