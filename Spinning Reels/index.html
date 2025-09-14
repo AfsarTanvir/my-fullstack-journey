@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slot Machine Test</title>
+  </head>
+  <body>
+    <h1>Slot Machine</h1>
+    <h2 id="balance">Balance : 0</h2>
+
+    <button id="addBtn">Deposit</button>
+    <br /><br />
+
+    <label for="inputBet">Bet Amount:</label>
+    <input type="number" id="inputBet" value="1" min="1" />
+    <br /><br />
+
+    <label for="lineBtn">Lines (1–3):</label>
+    <input type="number" id="lineBtn" value="1" min="1" max="3" />
+    <br /><br />
+
+    <button id="betBtn">Spin</button>
+    <br /><br />
+
+    <p>Winnings: <span id="winDisplay">0</span></p>
+
+    <script src="app.js"></script>
+  </body>
+</html>
