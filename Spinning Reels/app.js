@@ -3,7 +3,7 @@ let inputBet = document.querySelector("#betInput");
 let spinBtn = document.querySelector("#betBtn");
 let lineBet = document.querySelector("#lineBtn");
 let winDisplay = document.querySelector("#winDisplay span");
-let balanceH1 = document.querySelector("#totalBalance");
+let balanceH1 = document.querySelector("#totalBalance span");
 let grid = document.querySelector("#reels");
 let exitBtn = document.querySelector("#exitBtn");
 
@@ -162,6 +162,6 @@ exitBtn.addEventListener("click", () => {
 let account = createBalanceManager();
 
 function updateBalanceDisplay() {
-  balanceH1.innerHTML = `Balance : ${account.getBalance()}`;
+  balanceH1.innerHTML = `${account.getBalance()}`;
 }
 updateBalanceDisplay();
