@@ -1,10 +1,12 @@
 // const prompt = require("prompt-sync")();
 let depositBtn = document.querySelector("#addBtn");
-let inputBet = document.querySelector("#inputBet");
+let inputBet = document.querySelector("#betInput");
 let spinBtn = document.querySelector("#betBtn");
 let lineBet = document.querySelector("#lineBtn");
-let winDisplay = document.querySelector("#winDisplay");
-let balanceH1 = document.querySelector("#balance");
+let winDisplay = document.querySelector("#winDisplay span");
+let balanceH1 = document.querySelector("#totalBalance");
+let grid = document.querySelector("#reels");
+let exitBtn = document.querySelector("#exitBtn");
 
 const ROWS = 3;
 const COLS = 3;
@@ -29,7 +31,7 @@ function createBalanceManager() {
   return {
     deposit(amount) {
       if (amount > 0) balance += amount;
-      updateBalanceDisplay()
+      updateBalanceDisplay();
       console.log(balance);
       return balance;
     },
@@ -39,7 +41,7 @@ function createBalanceManager() {
     bet(amount) {
       if (amount > 0 && amount <= balance) {
         balance -= amount;
-        updateBalanceDisplay()
+        updateBalanceDisplay();
         return true;
       }
       return false;
@@ -94,7 +96,7 @@ depositBtn.addEventListener("click", () => {
     } else {
       account.deposit(numberDepositAmount);
       updateBalanceDisplay();
-    //   alert("Balance: " + account.getBalance());
+      //   alert("Balance: " + account.getBalance());
       break;
     }
   }
@@ -121,6 +123,7 @@ const getWinnings = (str, bet, lines) => {
 };
 
 spinBtn.addEventListener("click", () => {
+  console.log("spin button called.");
   let bet = parseFloat(inputBet.value);
   let lines = parseFloat(lineBet.value);
 
@@ -141,14 +144,29 @@ spinBtn.addEventListener("click", () => {
   let outputString = transposeString(mainString);
 
   const wins = getWinnings(outputString, bet, lines);
+  account.deposit(wins);
 
   setTimeout(() => {
     winDisplay.textContent = `${wins}`;
-    account.deposit(wins);
+    for (let i = 0; i < outputString.length; ++i) {
+      let tempString = "";
+      for (let j = 0; j < outputString[i].length; ++j) {
+        tempString +=
+          j + 1 == outputString[i].length
+            ? `${outputString[i][j]}`
+            : `${outputString[i][j]} | `;
+      }
+      grid.children[i].innerHTML = tempString;
+      console.log(tempString, grid.children[i]);
+    }
     console.log("Spin Result:", outputString);
     console.log("Remaining Balance:", account.getBalance());
   }, 2000);
 });
+
+exitBtn.addEventListener('click', ()=>{
+  window.close();
+})
 
 let account = createBalanceManager();
 
