@@ -1,6 +1,8 @@
-// this Keyword
-// The value of this depends on where and how the function is called.
-
+/* this Keyword
+ The value of this depends on where and how the function is called.
+this is a dynamic keyword: its value depends on how a function is called (not where it is written).
+It points to the execution context (the object that "owns" the function call).
+*/
 // 1.Global Context
 // In non-strict mode → this refers to the global object (window in browser).
 // In strict mode → this is undefined.
@@ -49,26 +51,47 @@
 // let user1 = new User("Alice");
 // user1.greet(); // 👉 Hello Alice
 
-
 // call(thisArg, arg1, arg2, ...)
 // Calls a function with a given this value and arguments separately.
-function greet(greeting) {
-  console.log(greeting + ", " + this.name);
+// function greet(greeting) {
+//   console.log(greeting + ", " + this.name);
+// }
+// let person = { name: "Bob" };
+// greet.call(person, "Hello", "Hi "); // 👉 Hello, Bob
+// let person2 = {name: "alice", age: 25};
+// greet.call(person2, "Hola");
+
+// // apply(thisArg, [argsArray])
+// // Like call(), but arguments are passed as an array.
+// greet.apply(person, ["Hi"]); // 👉 Hi, Bob
+// greet.call(person2, "Hmmm");
+
+// // bind(thisArg, arg1, arg2, ...)
+// // Returns a new function with this permanently set.
+// // Doesn’t execute immediately.
+// let greetBob = greet.bind(person);
+// greetBob("Hey");
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    return `${this.name} makes a sound`;
+  }
 }
-let person = { name: "Bob" };
-greet.call(person, "Hello"); // 👉 Hello, Bob
-let person2 = {name: "alice", age: 25};
-greet.call(person2, "Hola");
 
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+  speak() {
+    return `${this.name} barks`;
+  }
+}
 
-// apply(thisArg, [argsArray])
-// Like call(), but arguments are passed as an array.
-greet.apply(person, ["Hi"]); // 👉 Hi, Bob
-greet.call(person2, "Hmmm");
-
-// bind(thisArg, arg1, arg2, ...)
-// Returns a new function with this permanently set.
-// Doesn’t execute immediately.
-let greetBob = greet.bind(person);
-greetBob("Hey");
-
+const dog = new Dog("Rex", "Labrador");
+console.log(dog.speak());
+console.log(dog instanceof Animal);
+console.log(dog.hasOwnProperty("name"));

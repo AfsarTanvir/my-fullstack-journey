@@ -61,3 +61,19 @@ getElementsByClassName("class") → multiple elements (HTMLCollection)
 getElementsByName("name") → matches name attribute, not class
 querySelector("selector") → first match
 querySelectorAll("selector") → all matches
+
+
+
+🔹 Quick Comparison of All Loops
+LOOP	                Best For
+----------------------------------------------------------
+for	            Classic counting / indexes
+while	        Unknown iterations, condition-based
+do..while	    Must run at least once
+for..of	        Iterating values (arrays, strings)
+for..in	        Iterating keys (objects, array indexes)
+forEach	        Easy array iteration (no break/continue)
+map	            Transforming arrays
+filter	        Selecting elements
+reduce	        Reducing to single value
+for await..of	Async iteration (promises, streams)
