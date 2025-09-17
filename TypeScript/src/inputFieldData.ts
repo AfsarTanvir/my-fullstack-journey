@@ -12,8 +12,11 @@ function getInfo() {
   const age: string = ageInput.value;
 
   console.log(name, age, email);
-  if (printDiv != null)
+  if (printDiv != null) {
     printDiv.innerHTML = `<p>Name: <b>${name}</b></p>
     <p>Email: ${email}</p>
     <p>Age: ${age}</p>`;
+  }
 }
+
+// getInfo();
