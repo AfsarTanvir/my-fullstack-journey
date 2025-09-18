@@ -28,11 +28,52 @@ registerBtn.addEventListener("submit", (e) => {
   const password = document.getElementById("registerPassword").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
 
+  for (let i = 0; i < name.length; ++i) {
+    if (
+      !(
+        (name[i] >= "a" && name[i] <= "z") ||
+        (name[i] >= "A" && name[i] <= "Z") ||
+        name[i] == " " ||
+        name[i] == "." ||
+        name[i] == "_" ||
+        name[i] == "-"
+      )
+    ) {
+      showError("registerError", "Please enter correct name.");
+      return;
+    }
+  }
+
   if (password !== confirmPassword) {
     showError("registerError", "Passwords do not match.");
+    return;
   }
   if (emailExists(email)) {
     showError("registerError", "An account with this email already exists.");
+    return;
+  }
+  // password
+  let isNumber = false,
+    isCapital = false,
+    isLower = false,
+    isSymbol = false;
+  for (let i = 0; i < password.length; ++i) {
+    if (password[i] >= "0" && password[i] <= "9") isNumber = true;
+    else if (password[i] >= "a" && password[i] <= "z") isLower = true;
+    else if (password[i] >= "A" && password[i] <= "A") isCapital = true;
+    else isSymbol = true;
+  }
+  if (!isNumber) {
+    showError("registerError", "Password should contains number.");
+    return;
+  } else if (!isCapital) {
+    showError("registerError", "Password should contains upper case letter.");
+    return;
+  } else if (!isLower) {
+    showError("registerError", "Password should contains lower case letter.");
+    return;
+  } else if (!isSymbol) {
+    showError("registerError", "Password should contains special symbol.");
     return;
   }
 

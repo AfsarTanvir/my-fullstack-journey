@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Afsar Tanvir Dom Practice</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afsar Tanvir Dom practice</title>
-</head>
+      .image {
+        background: url("./Images/welcomePage.png") no-repeat center center fixed;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+      }
 
-<body>
+      h2 {
+        text-align: center;
+        color: white;
+        position: relative;
+        top: 40%;
+        font-size: 28px;
+      }
+    </style>
+  </head>
+
+  <body>
     <div>
-        <h2 style="text-align: center;">Welcome to Afsar Tanvir Commerical Site.</h2>
-        <img src="./Images/welcomePage.png" class="welcomeImage" alt="Loading Image">
+      <h2>Welcome to Afsar Tanvir Commercial Site.</h2>
     </div>
-    <script>
-        setTimeout(() => {
-            window.location.href = "./src/loginPage.html";
-        }, 3000);        
-    </script>
-</body>
 
+    <script>
+      document.body.classList.add("image");
+
+      setTimeout(() => {
+        window.location.href = "./src/loginPage.html";
+      }, 3000);
+    </script>
+  </body>
 </html>
