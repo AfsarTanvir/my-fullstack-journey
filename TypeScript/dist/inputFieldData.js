@@ -1,19 +1,18 @@
-const printDiv = document.querySelector("#print");
-function getInfo() {
+const getInfoBtn = document.querySelector("#getBtn");
+getInfoBtn.addEventListener('click', (e) => {
     console.log("Button is Clicked");
     const nameInput = document.getElementById("username");
-    const name = nameInput.value;
     const emailInput = document.getElementById("email");
-    const email = emailInput.value;
     const ageInput = document.getElementById("age");
+    const name = nameInput.value;
+    const email = emailInput.value;
     const age = ageInput.value;
-    console.log(name, age, email);
+    const printDiv = document.querySelector("#print");
     if (printDiv != null) {
         printDiv.innerHTML = `<p>Name: <b>${name}</b></p>
     <p>Email: ${email}</p>
     <p>Age: ${age}</p>`;
     }
-}
+});
 export {};
-// getInfo();
 //# sourceMappingURL=inputFieldData.js.map

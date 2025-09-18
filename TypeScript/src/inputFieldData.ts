@@ -1,22 +1,20 @@
-const printDiv = document.querySelector("#print");
+const getInfoBtn = document.querySelector("#getBtn") as HTMLButtonElement;
 
-function getInfo() {
+getInfoBtn.addEventListener('click', (e) => {
   console.log("Button is Clicked");
   const nameInput = document.getElementById("username") as HTMLInputElement;
-  const name: string = nameInput.value;
-
   const emailInput = document.getElementById("email") as HTMLInputElement;
-  const email: string = emailInput.value;
-
   const ageInput = document.getElementById("age") as HTMLInputElement;
-  const age: string = ageInput.value;
 
-  console.log(name, age, email);
+  const name = nameInput.value;
+  const email = emailInput.value;
+  const age = ageInput.value;
+
+  const printDiv = document.querySelector("#print");
   if (printDiv != null) {
     printDiv.innerHTML = `<p>Name: <b>${name}</b></p>
     <p>Email: ${email}</p>
     <p>Age: ${age}</p>`;
   }
-}
+});
 
-// getInfo();
