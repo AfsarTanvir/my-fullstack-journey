@@ -10,9 +10,17 @@ function emailExists(email) {
   return users !== null;
 }
 
+function isValidEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+
 function showError(str01, str02) {
   const resgisterError = document.getElementById("registerError");
   resgisterError.innerHTML = `${str01} = ${str02}`;
+  setTimeout(() => {
+    resgisterError.innerHTML = ``;
+  }, 2000);
 }
 
 function showSuccess(str01, str02) {
@@ -52,6 +60,11 @@ registerBtn.addEventListener("submit", (e) => {
     showError("registerError", "An account with this email already exists.");
     return;
   }
+
+  if (!isValidEmail(email)) {
+    showError("registerError", "Email is not valid.");
+    return;
+  }
   // password
   let isNumber = false,
     isCapital = false,
@@ -60,7 +73,7 @@ registerBtn.addEventListener("submit", (e) => {
   for (let i = 0; i < password.length; ++i) {
     if (password[i] >= "0" && password[i] <= "9") isNumber = true;
     else if (password[i] >= "a" && password[i] <= "z") isLower = true;
-    else if (password[i] >= "A" && password[i] <= "A") isCapital = true;
+    else if (password[i] >= "A" && password[i] <= "Z") isCapital = true;
     else isSymbol = true;
   }
   if (!isNumber) {
